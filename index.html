@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application de Messagerie</title>
+    <link rel="stylesheet" href="style.css"
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <div class="header">
+            <h1>💬 Messages</h1>
+            <div class="user-info">
+                Connecté en tant que <span class="current-user" id="currentUser">Alice</span>
+            </div>
+        </div>
+
+        <!-- Contrôles -->
+        <div class="controls">
+            <button class="btn btn-primary" onclick="toggleNewMessageForm()">
+                ➕ Nouveau Message
+            </button>
+        </div>
+
+        <!-- Formulaire nouveau message -->
+        <div class="form-section" id="newMessageForm">
+            <h3>✏️ Créer un nouveau message</h3>
+            <div class="form-group">
+                <label for="newMessageContent">Contenu du message :</label>
+                <textarea 
+                    id="newMessageContent" 
+                    class="form-control" 
+                    placeholder="Écrivez votre message ici..."
+                    rows="4"
+                ></textarea>
+            </div>
+            <button class="btn btn-success" onclick="createMessage()">
+                💾 Publier
+            </button>
+            <button class="btn btn-secondary" onclick="cancelNewMessage()">
+                ❌ Annuler
+            </button>
+        </div>
+
+        <!-- Filtres -->
+        <div class="controls">
+            <div class="filters">
+                <span class="filter-label">Filtrer par auteur :</span>
+                <button class="filter-btn active" onclick="filterMessages('')">
+                    Tous
+                </button>
+                <div id="authorFilters"></div>
+            </div>
+        </div>
+
+        <!-- Messages -->
+        <div id="messagesContainer" class="messages-container"></div>
+
+        <!-- Statistiques -->
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalMessages">0</div>
+                <div class="stat-label">Total messages</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="displayedMessages">0</div>
+                <div class="stat-label">Messages affichés</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="totalAuthors">0</div>
+                <div class="stat-label">Auteurs</div>
+            </div>
+        </div>
+    </div>
+    <script src="scipts.js"></script>
+</body>
+</html>
