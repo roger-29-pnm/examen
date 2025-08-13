@@ -1,0 +1,1 @@
+const API_BASE_URL = 'https://stn-examen-ctd5q6-bfec83-77-237-241-121.traefik.me'
